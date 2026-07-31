@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amelia en Vivo · La Cumbre, Córdoba</title>
+<meta name="description" content="Amelia en Vivo. Música en vivo, de cerca. La Cumbre, Córdoba.">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="images/favicon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="nav-colors">
+  <a href="index.html" class="nav-colors-logo">
+    <img src="images/logo-amelia.png" alt="Amelia en Vivo" style="height:44px;width:auto;">
+  </a>
+  <button class="nav-colors-burger" aria-label="Menú" id="menuOpen">
+    <svg width="24" height="16" viewBox="0 0 24 16" fill="none">
+      <rect y="0" width="24" height="1.5" fill="currentColor"/>
+      <rect y="7" width="24" height="1.5" fill="currentColor"/>
+      <rect y="14" width="24" height="1.5" fill="currentColor"/>
+    </svg>
+  </button>
+</nav>
+
+<!-- OVERLAY MENU -->
+<div class="menu-overlay" id="menuOverlay">
+  <div class="menu-overlay-inner">
+    <div class="menu-overlay-top">
+      <a href="index.html" class="menu-overlay-logo">
+        <img src="images/logo-amelia.png" alt="Amelia en Vivo" style="height:44px;width:auto;">
+      </a>
+      <button class="menu-overlay-close" id="menuClose" aria-label="Cerrar">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M2 2l16 16M18 2L2 18" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="menu-overlay-nav">
+      <a href="index.html" class="menu-overlay-link" data-page="index.html">Inicio</a>
+      <a href="about.html" class="menu-overlay-link" data-page="about.html">Amelia</a>
+      <a href="future-sounds.html" class="menu-overlay-link" data-page="future-sounds.html">Próximas Sesiones</a>
+      <a href="your-sound.html" class="menu-overlay-link" data-page="your-sound.html">Tu Sonido</a>
+    </nav>
+    <div class="menu-overlay-secondary">
+      <a href="your-sound.html" class="menu-overlay-cta">Mandá tu demo <span>→</span></a>
+      <p class="menu-overlay-cta-sub">Para tener chances de tocar en Amelia</p>
+    </div>
+    <div class="menu-overlay-bottom">
+      <a href="mailto:sessions@ameliaenvivo.com">sessions@ameliaenvivo.com</a>
+      <a href="https://instagram.com/ameliaenvivo" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO VIDEO -->
+<header class="hero-colors">
+  <div class="hero-colors-bg">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="video/reel-amelia.mp4" type="video/mp4">
+    </video>
+    <div class="hero-colors-overlay"></div>
+  </div>
+
+  <nav class="hero-cats">
+    <a href="index.html" class="hero-cat active">Inicio</a>
+    <a href="#discos" class="hero-cat">Discos</a>
+    <a href="future-sounds.html" class="hero-cat">Próximas</a>
+    <a href="about.html" class="hero-cat">Amelia</a>
+    <a href="your-sound.html" class="hero-cat">Tu Sonido</a>
+  </nav>
+
+  <div class="hero-tagline">Amelia en Vivo · La Cumbre, Córdoba · <a href="https://www.google.com/maps/place/Amelia+La+Cumbre/@-31.0041527,-64.5572885,489m/data=!3m1!1e3!4m12!1m5!3m4!2zMzHCsDAwJzE1LjAiUyA2NMKwMzMnMjEuNiJX!8m2!3d-31.004155!4d-64.556001!3m5!1s0x942d9bf448ba1163:0xab26588932212530!8m2!3d-31.0029512!4d-64.556403!16s%2Fg%2F11rp_4b8sm" target="_blank" rel="noopener" class="hero-gps">−31.004155, −64.556001</a></div>
+</header>
+
+<!-- DISCOS -->
+<section class="bg-black section-pad-lg reveal" id="discos">
+  <div class="wrap">
+    <div class="section-head-editorial">
+      <div class="eyebrow">Discos</div>
+      <h2 class="display-title" style="font-size:clamp(30px,4.6vw,62px);">Artistas que pasaron por Amelia.</h2>
+    </div>
+
+    <div class="carousel-wrap">
+      <div class="carousel">
+
+        <a href="https://www.youtube.com/@AmeliaEnVivo" class="cd-card" target="_blank" rel="noopener">
+          <div class="cd-disc">
+            <div class="cd-label-top">Amelia en vivo</div>
+            <img src="images/cd-litto-nebbia.jpg" alt="Litto Nebbia en Amelia en Vivo">
+            <div class="cd-overlay-info">
+              <div class="cd-overlay-artist">Litto Nebbia</div>
+              <div class="cd-overlay-date">La Cumbre · 2026</div>
+            </div>
+            <div class="cd-hole"></div>
+            <div class="cd-play">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://youtube.com/@ameliaenvivo" class="cd-card" target="_blank" rel="noopener">
+          <div class="cd-disc">
+            <div class="cd-label-top">Amelia en vivo</div>
+            <img src="images/cd-chelos-fin-del-mundo.jpg" alt="Chelos del Fin del Mundo en Amelia en Vivo">
+            <div class="cd-overlay-info">
+              <div class="cd-overlay-artist">Chelos del Fin del Mundo</div>
+              <div class="cd-overlay-date">La Cumbre · 2026</div>
+            </div>
+            <div class="cd-hole"></div>
+            <div class="cd-play">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </a>
+
+      </div>
+      <div class="carousel-nav">
+        <button class="c-prev" aria-label="Anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="c-next" aria-label="Siguiente"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA (banda) -->
+<a href="about.html#galeria" class="galeria-band reveal">
+  <img src="images/amelia-31.jpg" alt="Amelia en Vivo">
+  <div class="galeria-band-overlay"></div>
+  <div class="galeria-band-text">
+    <div class="eyebrow" style="justify-content:center;color:rgba(231,229,216,0.7);">Galería</div>
+    <span class="galeria-band-cta">Ver la galería <span>→</span></span>
+  </div>
+</a>
+
+<!-- PRÓXIMAS FECHAS -->
+<a href="future-sounds.html" class="galeria-band reveal">
+  <img src="images/atardecer-04.jpg" alt="Próximas sesiones en Amelia en Vivo">
+  <div class="galeria-band-overlay"></div>
+  <div class="galeria-band-text">
+    <div class="eyebrow" style="justify-content:center;color:rgba(231,229,216,0.7);">Próximas fechas</div>
+    <span class="galeria-band-cta">Lo que está por venir a Amelia <span>→</span></span>
+  </div>
+</a>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="images/logo-amelia.png" alt="Amelia en Vivo" style="height:40px;width:auto;"></div>
+        <p class="footer-tag">Sesiones en vivo<br>La Cumbre, Córdoba</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:sessions@ameliaenvivo.com">sessions@ameliaenvivo.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ubicación</h4>
+        <p>La Cumbre, Córdoba</p>
+        <a href="https://www.google.com/maps/place/Amelia+La+Cumbre/@-31.0041527,-64.5572885,489m/data=!3m1!1e3!4m12!1m5!3m4!2zMzHCsDAwJzE1LjAiUyA2NMKwMzMnMjEuNiJX!8m2!3d-31.004155!4d-64.556001!3m5!1s0x942d9bf448ba1163:0xab26588932212530!8m2!3d-31.0029512!4d-64.556403!16s%2Fg%2F11rp_4b8sm" target="_blank" rel="noopener" style="color:var(--accent);font-family:var(--mono);font-size:12px;">-31.004155, -64.556001</a>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="footer-bottom">
+      <span>© 2026 Amelia en Vivo</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

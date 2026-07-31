@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu Sonido · Amelia en Vivo</title>
+<meta name="description" content="Mandanos tu demo para tocar en Amelia en Vivo. La Cumbre, Córdoba.">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="images/favicon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="nav-inner">
+  <a href="index.html" class="nav-colors-logo">
+    <img src="images/logo-amelia.png" alt="Amelia en Vivo" style="height:40px;width:auto;">
+  </a>
+  <div class="nav-inner-links">
+    <a href="index.html" data-page="index.html">Inicio</a>
+    <a href="about.html" data-page="about.html">Amelia</a>
+    <a href="future-sounds.html" data-page="future-sounds.html">Próximas</a>
+    <a href="your-sound.html" data-page="your-sound.html" class="active">Tu Sonido</a>
+  </div>
+</nav>
+
+
+
+
+<header class="hero" style="min-height:64vh;">
+  <div class="hero-bg" style="background-image:url('images/show-your-sound-bg.jpg'); background-position:center 40%;"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Tu Sonido</div>
+    <h1 style="font-size:clamp(34px,5.5vw,64px);">Para artistas<br>y soñadores.</h1>
+  </div>
+</header>
+
+<section class="bg-beige section-pad">
+  <div class="wrap">
+    <div class="form-grid">
+      <div>
+        <h2 style="font-size:32px;">Mandanos tu demo.</h2>
+        <p style="margin-top:20px;font-size:17px;line-height:1.7;">Mandanos tu demo para tener la oportunidad de sonar en Amelia. Las demo submissions están abiertas para quienes quieran compartir su sonido. Subí tus archivos y nos pondremos en contacto.</p>
+
+        <div class="eyebrow" style="margin-top:40px;margin-bottom:14px;color:#9a4a26;">Formatos permitidos</div>
+        <ul class="file-types" style="color:#5b5a4f;">
+          <li>Video: .mp4, .avi, .avchd, .flv</li>
+          <li>Audio: .mp3, .wav, .aac, .mp4, .alac</li>
+        </ul>
+
+        <div class="eyebrow" style="margin-top:40px;margin-bottom:14px;color:#9a4a26;">Contacto directo</div>
+        <p style="color:#5b5a4f;">sessions@ameliaenvivo.com<br>+54 11 2721-2235</p>
+      </div>
+
+      <form id="sound-form" action="https://formspree.io/f/mpqgqbpd" method="POST" enctype="multipart/form-data" novalidate>
+        <div class="form-banner" id="form-banner"></div>
+
+        <div class="field-row">
+          <div class="field" data-field="firstName">
+            <label>Nombre <span class="req">*</span></label>
+            <input type="text" name="Nombre" style="color:#272823;border-color:rgba(39,40,35,0.2);">
+            <div class="field-error-msg">Falta completar el nombre.</div>
+          </div>
+          <div class="field" data-field="lastName">
+            <label>Apellido <span class="req">*</span></label>
+            <input type="text" name="Apellido" style="color:#272823;border-color:rgba(39,40,35,0.2);">
+            <div class="field-error-msg">Falta completar el apellido.</div>
+          </div>
+        </div>
+        <div class="field" data-field="email">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="Email" style="color:#272823;border-color:rgba(39,40,35,0.2);">
+          <div class="field-error-msg">Falta un email válido.</div>
+        </div>
+        <div class="field" data-field="phone">
+          <label>Teléfono <span class="req">*</span></label>
+          <input type="tel" name="Teléfono" style="color:#272823;border-color:rgba(39,40,35,0.2);">
+          <div class="field-error-msg">Falta completar el teléfono.</div>
+        </div>
+        <div class="field" data-field="file">
+          <label>Archivo <span class="req">*</span></label>
+          <div class="upload-box" style="border-color:rgba(39,40,35,0.25);color:#5b5a4f;">
+            <span class="plus">+</span>
+            <span class="upload-label">Cargar un archivo</span>
+          </div>
+          <input type="file" id="file-input" name="Archivo" style="display:none;">
+          <div class="field-error-msg">Falta adjuntar un archivo (audio o video).</div>
+        </div>
+        <div class="field">
+          <label>Dream Bigger</label>
+          <textarea rows="3" name="Mensaje" placeholder="Contanos más sobre vos" style="color:#272823;border-color:rgba(39,40,35,0.2);"></textarea>
+        </div>
+        <input type="hidden" name="_replyto" value="">
+        <input type="hidden" name="_subject" value="Nueva demo desde ameliaenvivo.com">
+        <button type="submit" class="submit-btn">Enviar demo</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="images/logo-amelia.png" alt="Amelia en Vivo" style="height:40px;width:auto;"></div>
+        <p class="footer-tag">Sesiones en vivo<br>La Cumbre, Córdoba</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:sessions@ameliaenvivo.com">sessions@ameliaenvivo.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ubicación</h4>
+        <p>La Cumbre, Córdoba</p>
+        <a href="https://www.google.com/maps/place/Amelia+La+Cumbre/@-31.0041527,-64.5572885,489m" target="_blank" rel="noopener" style="color:var(--accent);font-family:var(--mono);font-size:12px;">-31.004155, -64.556001</a>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="footer-bottom">
+      <span>© 2026 Amelia en Vivo</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
