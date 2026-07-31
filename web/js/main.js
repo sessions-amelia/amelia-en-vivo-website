@@ -29,18 +29,6 @@ function initMobileNav(){
 }
 document.addEventListener('DOMContentLoaded', initMobileNav);
 
-function initUploadBox(){
-  const box = document.querySelector('.upload-box');
-  const input = document.querySelector('#file-input');
-  if(!box || !input) return;
-  box.addEventListener('click', ()=> input.click());
-  input.addEventListener('change', ()=>{
-    const label = box.querySelector('.upload-label');
-    if(input.files.length && label) label.textContent = input.files[0].name;
-  });
-}
-document.addEventListener('DOMContentLoaded', initUploadBox);
-
 function initTeaserVideo(){
   const wrap = document.querySelector('#teaser-video-wrap');
   const video = document.querySelector('#teaser-video');
@@ -65,7 +53,6 @@ function initForm(){
   if(!form) return;
 
   const banner = form.querySelector('#form-banner');
-  const fileInput = form.querySelector('#file-input');
   const submitBtn = form.querySelector('.submit-btn');
 
   const fields = {
@@ -73,7 +60,7 @@ function initForm(){
     lastName:  { input: form.querySelector('[name="Apellido"]'), wrap: form.querySelector('[data-field="lastName"]') },
     email:     { input: form.querySelector('[name="Email"]'), wrap: form.querySelector('[data-field="email"]') },
     phone:     { input: form.querySelector('[name="Teléfono"]'), wrap: form.querySelector('[data-field="phone"]') },
-    file:      { input: fileInput, wrap: form.querySelector('[data-field="file"]') }
+    message:   { input: form.querySelector('[name="Mensaje"]'), wrap: form.querySelector('[data-field="message"]') }
   };
 
   function showBanner(message, type){
@@ -97,8 +84,7 @@ function initForm(){
   Object.keys(fields).forEach(key=>{
     const el = fields[key].input;
     if(!el) return;
-    const evt = (key === 'file') ? 'change' : 'input';
-    el.addEventListener(evt, ()=> clearFieldError(key));
+    el.addEventListener('input', ()=> clearFieldError(key));
   });
 
   function validate(){
@@ -109,7 +95,7 @@ function initForm(){
     if(!fields.lastName.input.value.trim()){ setFieldError('lastName'); missing.push('Apellido'); firstInvalidEl = firstInvalidEl || fields.lastName.input; } else clearFieldError('lastName');
     if(!isValidEmail(fields.email.input.value.trim())){ setFieldError('email'); missing.push('Email'); firstInvalidEl = firstInvalidEl || fields.email.input; } else clearFieldError('email');
     if(!fields.phone.input.value.trim()){ setFieldError('phone'); missing.push('Teléfono'); firstInvalidEl = firstInvalidEl || fields.phone.input; } else clearFieldError('phone');
-    if(!fields.file.input.files || !fields.file.input.files.length){ setFieldError('file'); missing.push('Archivo'); firstInvalidEl = firstInvalidEl || fields.file.input; } else clearFieldError('file');
+    if(!fields.message.input.value.trim()){ setFieldError('message'); missing.push('Dream Bigger'); firstInvalidEl = firstInvalidEl || fields.message.input; } else clearFieldError('message');
 
     return { ok: missing.length === 0, missing, firstInvalidEl };
   }
@@ -144,11 +130,9 @@ function initForm(){
       headers: { 'Accept': 'application/json' }
     }).then(response=>{
       if(response.ok){
-        showBanner('¡Listo! Tu demo fue enviada a Amelia. Te vamos a contactar a ' + fields.email.input.value.trim() + '.', 'success');
+        showBanner('¡Listo! Tu mensaje fue enviado a Amelia. Te vamos a contactar a ' + fields.email.input.value.trim() + '.', 'success');
         form.reset();
         Object.keys(fields).forEach(clearFieldError);
-        const uploadLabel = form.querySelector('.upload-label');
-        if(uploadLabel) uploadLabel.textContent = 'Cargar un archivo';
         submitBtn.textContent = 'Enviado ✓';
         setTimeout(()=>{ submitBtn.textContent = originalLabel; submitBtn.disabled = false; }, 2600);
       } else {
@@ -160,7 +144,7 @@ function initForm(){
         });
       }
     }).catch(()=>{
-      showBanner('No pudimos enviar la demo. Probá de nuevo o escribinos directamente a sessions@ameliaenvivo.com.', 'error');
+      showBanner('No pudimos enviar el mensaje. Probá de nuevo o escribinos directamente a sessions@ameliaenvivo.com.', 'error');
       submitBtn.textContent = originalLabel;
       submitBtn.disabled = false;
     });

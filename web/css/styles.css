@@ -468,7 +468,6 @@ section{position:relative;}
 }
 .field.has-error input,
 .field.has-error textarea{border-bottom-color:#A23E1D;}
-.field.has-error .upload-box{border-color:#A23E1D;}
 .field.has-error .field-error-msg{display:block;}
 .form-banner{
   display:none;
@@ -480,17 +479,6 @@ section{position:relative;}
 .form-banner.success{
   border-color:var(--green);color:var(--green);background:rgba(69,91,92,0.08);
 }
-.upload-box{
-  border:1px dashed rgba(39,40,35,0.25);
-  border-radius:2px;padding:48px;text-align:center;
-  font-family:var(--mono);font-size:13px;color:var(--gray);
-  cursor:pointer;transition:border-color .2s;
-}
-.upload-box:hover{border-color:var(--accent);}
-.upload-box .plus{font-size:28px;color:var(--accent);display:block;margin-bottom:10px;}
-.file-types{list-style:none;margin-top:16px;}
-.file-types li{font-size:14px;color:var(--gray);padding:4px 0;}
-.file-types li::before{content:'· ';color:var(--accent);}
 .submit-btn{
   width:100%;padding:16px;background:var(--accent);color:var(--black);
   border:none;font-family:var(--sans);font-size:13px;letter-spacing:0.08em;
