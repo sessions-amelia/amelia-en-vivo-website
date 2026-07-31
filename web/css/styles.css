@@ -616,6 +616,9 @@ footer{
   margin:0 auto;
   text-align:left;
 }
+@media(min-width:960px){
+  .amelia-text-block{ margin-left:calc(50% - 470px); margin-right:auto; }
+}
 .amelia-text-block .friends-list{grid-template-columns:1fr 1fr;}
 .amelia-video-full{
   margin-top:64px;
@@ -627,6 +630,31 @@ footer{
   max-height:80vh;
   object-fit:cover;
   display:block;
+}
+
+/* Rama decorativa a la izquierda del texto; termina justo donde
+   empieza la sección oscura siguiente (padding-bottom en 0). */
+.finca-section{
+  padding-bottom:0;
+}
+.finca-grid{
+  align-items:stretch;
+}
+.finca-tree{
+  position:relative;
+  min-height:220px;
+}
+.finca-tree img{
+  position:absolute;
+  bottom:0;left:0;
+  width:100%;
+  height:auto;
+  display:block;
+}
+@media(max-width:760px){
+  .finca-grid{ align-items:center; }
+  .finca-tree{ position:static; min-height:0; max-width:280px; margin:0 auto; }
+  .finca-tree img{ position:static; width:100%; }
 }
 
 
@@ -800,12 +828,22 @@ footer{
   pointer-events:none; /* solo los hijos son clickeables */
 }
 .nav-colors-logo,
-.nav-colors-burger{
+.nav-colors-right{
   pointer-events:all;
 }
 .nav-colors-logo{
   display:flex;align-items:center;
 }
+.nav-colors-right{
+  display:flex;align-items:center;gap:22px;
+}
+.nav-colors-social{
+  display:flex;
+  color:rgba(231,229,216,0.75);
+  transition:color .2s;
+}
+.nav-colors-social:hover{color:var(--beige);}
+.nav-colors-social svg{display:block;}
 .nav-colors-burger{
   background:none;border:none;cursor:pointer;
   color:var(--beige);
