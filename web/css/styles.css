@@ -360,6 +360,25 @@ section{position:relative;}
 }
 .carousel-nav button:hover{border-color:var(--accent);color:var(--accent);}
 
+/* Flechas del carrusel de próximas sesiones: a la altura de la foto, una a cada lado */
+.fs-carousel-wrap .carousel-nav{
+  position:absolute;
+  top:374px;
+  transform:translateY(-50%);
+  left:0;right:0;
+  margin-top:0;
+  justify-content:space-between;
+  padding:0 4px;
+  pointer-events:none;
+  z-index:5;
+}
+.fs-carousel-wrap .carousel-nav button{
+  pointer-events:all;
+  background:rgba(20,21,18,0.6);
+  backdrop-filter:blur(2px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.35);
+}
+
 /* ---------- Galería band (home → galería) ---------- */
 .galeria-band{
   position:relative;display:block;
@@ -399,13 +418,17 @@ section{position:relative;}
 .gallery .g-big{grid-column:span 2;grid-row:span 2;}
 .gallery .g-tall{grid-row:span 2;}
 
-/* ---------- Future Sounds cards - formato brandbook (ticket/phone) ---------- */
+/* ---------- Future Sounds cards - carrusel horizontal ---------- */
 .fs-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:32px;
+  display:flex;gap:32px;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:4px 4px 28px;
+  scrollbar-width:none;
 }
+.fs-grid::-webkit-scrollbar{display:none;}
 .fs-card{
+  flex:0 0 380px;
+  scroll-snap-align:start;
   display:flex;flex-direction:column;
   border-radius:28px;
   overflow:hidden;
@@ -485,7 +508,7 @@ section{position:relative;}
 .fs-card:hover .fs-ticket-btn span{color:var(--black);}
 .fs-card .fs-ticket-btn span{transition:color .25s ease;}
 
-.fs-card.fs-coral .fs-top{background:var(--coral);color:#2b1208;}
+.fs-card.fs-coral .fs-top{background:var(--coral);color:#1a0a02;}
 .fs-card.fs-blue .fs-top{background:var(--blue);color:#0d1b22;}
 .fs-card.fs-beige .fs-top{background:var(--beige);color:var(--black);}
 .fs-card.fs-beige .fs-meta{color:var(--coral-deep);}
@@ -574,11 +597,6 @@ footer{
   font-family:var(--serif);font-style:italic;
 }
 
-/* ---------- Responsive (tablet) ---------- */
-@media (max-width: 1180px) and (min-width: 981px){
-  .fs-grid{grid-template-columns:repeat(2,1fr);}
-}
-
 /* ---------- Responsive ---------- */
 @media (max-width: 980px){
   .wrap{padding:0 24px;}
@@ -618,7 +636,8 @@ footer{
   .friends-list{grid-template-columns:1fr;}
   .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;}
   .gallery .g-big{grid-column:span 2;grid-row:span 1;height:320px;}
-  .fs-grid{grid-template-columns:1fr;gap:28px;}
+  .fs-grid{gap:20px;}
+  .fs-card{flex-basis:84vw;}
   .fs-card .fs-top{min-height:170px;}
   .fs-card .fs-img{height:320px;}
   .form-grid{grid-template-columns:1fr;gap:32px;}

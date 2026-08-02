@@ -12,7 +12,10 @@ function initCarousel(){
     const prev = wrap.querySelector('.c-prev');
     const next = wrap.querySelector('.c-next');
     if(!track) return;
-    const scrollAmt = () => (track.querySelector('.cd-card, .session-card')?.offsetWidth || 300) + 40;
+    const scrollAmt = () => {
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 40;
+      return (track.querySelector('.cd-card, .session-card, .fs-card')?.offsetWidth || 300) + gap;
+    };
     prev && prev.addEventListener('click', ()=> track.scrollBy({left: -scrollAmt(), behavior:'smooth'}));
     next && next.addEventListener('click', ()=> track.scrollBy({left: scrollAmt(), behavior:'smooth'}));
   });
