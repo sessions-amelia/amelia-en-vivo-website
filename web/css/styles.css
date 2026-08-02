@@ -1,6 +1,54 @@
-/* Fonts: Atkinson Hyperlegible Mono (libre) + Playfair Display como fallback de Antonia */
-/* Para producción: reemplazar Playfair Display por Antonia (licencia Atipo) via @font-face */
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+/* Fonts: Atkinson Hyperlegible Mono (libre) + Antonia (licencia Atipo, cortes ópticos H1/H2/H3/Text) */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face{
+  font-family:'AntoniaH1';
+  src:url('../fonts/AntoniaH1-Regular.woff2') format('woff2'),
+      url('../fonts/AntoniaH1-Regular.woff') format('woff');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'AntoniaH1';
+  src:url('../fonts/AntoniaH1-RegularItalic.woff2') format('woff2'),
+      url('../fonts/AntoniaH1-RegularItalic.woff') format('woff');
+  font-weight:400;font-style:italic;font-display:swap;
+}
+@font-face{
+  font-family:'AntoniaH2';
+  src:url('../fonts/AntoniaH2-Regular.woff2') format('woff2'),
+      url('../fonts/AntoniaH2-Regular.woff') format('woff');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'AntoniaH2';
+  src:url('../fonts/AntoniaH2-RegularItalic.woff2') format('woff2'),
+      url('../fonts/AntoniaH2-RegularItalic.woff') format('woff');
+  font-weight:400;font-style:italic;font-display:swap;
+}
+@font-face{
+  font-family:'AntoniaH3';
+  src:url('../fonts/AntoniaH3-Regular.woff2') format('woff2'),
+      url('../fonts/AntoniaH3-Regular.woff') format('woff');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'AntoniaH3';
+  src:url('../fonts/AntoniaH3-RegularItalic.woff2') format('woff2'),
+      url('../fonts/AntoniaH3-RegularItalic.woff') format('woff');
+  font-weight:400;font-style:italic;font-display:swap;
+}
+@font-face{
+  font-family:'AntoniaText';
+  src:url('../fonts/AntoniaText-Regular.woff2') format('woff2'),
+      url('../fonts/AntoniaText-Regular.woff') format('woff');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'AntoniaText';
+  src:url('../fonts/AntoniaText-RegularItalic.woff2') format('woff2'),
+      url('../fonts/AntoniaText-RegularItalic.woff') format('woff');
+  font-weight:400;font-style:italic;font-display:swap;
+}
 
 :root{
   --black: #272823;
@@ -19,7 +67,10 @@
   --blue-brand: #628599; /* Azul-gris oficial brandbook */
   --amber: #E7B05F;     /* Ámbar (reservado) */
 
-  --serif: 'Antonia', 'Playfair Display', Georgia, serif;  /* Antonia via @font-face cuando tengas la licencia */
+  --serif: 'AntoniaH2', Georgia, serif;
+  --serif-h1: 'AntoniaH1', Georgia, serif;
+  --serif-h3: 'AntoniaH3', Georgia, serif;
+  --serif-text: 'AntoniaText', Georgia, serif;
   --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --mono: 'Atkinson Hyperlegible Mono', 'Courier New', monospace;
 
@@ -71,9 +122,9 @@ h1,h2,h3{
   line-height:1.08;
   letter-spacing:-0.01em;
 }
-h1{font-size:clamp(44px,7.5vw,96px); letter-spacing:-0.02em;}
+h1{font-family:var(--serif-h1); font-size:clamp(44px,7.5vw,96px); letter-spacing:-0.02em;}
 h2{font-size:clamp(32px,4.5vw,56px); letter-spacing:-0.015em;}
-h3{font-size:clamp(21px,2.4vw,30px);font-style:italic;font-weight:400;}
+h3{font-family:var(--serif-h3); font-size:clamp(21px,2.4vw,30px);font-style:italic;font-weight:400;}
 
 p{color:var(--gray);}
 p.lead{font-size:20px;line-height:1.7;color:#C9C7B8; font-weight:300;}
@@ -439,6 +490,7 @@ section{position:relative;}
 .fs-card.fs-beige .fs-top{background:var(--beige);color:var(--black);}
 .fs-card.fs-beige .fs-meta{color:var(--coral-deep);}
 .fs-card.fs-beige .fs-diag{background:var(--coral-deep);opacity:0.5;}
+.fs-card.fs-olive .fs-top{background:var(--olive);color:var(--beige);}
 
 .empty-state{
   padding:140px 0;text-align:center;
@@ -586,7 +638,7 @@ footer{
   pointer-events:none;
 }
 .cd-overlay-artist{
-  font-family:var(--serif);font-style:italic;font-size:17px;
+  font-family:var(--serif-text);font-style:italic;font-size:17px;
   color:var(--beige);
   text-shadow:0 1px 6px rgba(0,0,0,0.7);
   line-height:1.2;
