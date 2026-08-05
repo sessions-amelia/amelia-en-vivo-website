@@ -1105,7 +1105,7 @@ footer{
   display:flex;align-items:center;gap:32px;
 }
 .nav-inner-links a{
-  font-family:var(--sans);
+  font-family:var(--mono);
   font-size:13px;
   font-weight:400;
   letter-spacing:0.05em;
