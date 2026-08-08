@@ -910,6 +910,14 @@ footer{
   transition:opacity .2s;
 }
 .nav-colors-burger:hover{opacity:.65;}
+.nav-colors-tickets{
+  font-size:11px;
+  padding:8px 18px;
+}
+
+@media(max-width:600px){
+  .nav-colors-tickets{ padding:7px 14px;font-size:10px; }
+}
 
 /* ═══════════════════════════════════════════════
    OVERLAY MENU
