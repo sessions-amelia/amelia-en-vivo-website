@@ -1267,3 +1267,63 @@ footer{
 .finca-link:hover{
   color:var(--accent);
 }
+
+/* ═══════════════════════════════════════════════
+   LA CUMBRE GASTRONÓMICA — modal (contenido de tercero,
+   deliberadamente fuera del sistema tipográfico/color de Amelia)
+═══════════════════════════════════════════════ */
+.lcg-modal-overlay{
+  position:fixed;inset:0;z-index:600;
+  background:rgba(0,0,0,0.75);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s ease, visibility .3s ease;
+}
+.lcg-modal-overlay.is-open{opacity:1;visibility:visible;}
+.lcg-modal{
+  position:relative;
+  width:100%;max-width:440px;
+  background:var(--black-soft);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,0.55);
+  transform:translateY(16px);
+  transition:transform .3s ease;
+}
+.lcg-modal-overlay.is-open .lcg-modal{transform:translateY(0);}
+.lcg-modal-close{
+  position:absolute;top:14px;right:14px;z-index:2;
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(0,0,0,0.45);
+  border:none;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:background .2s ease;
+}
+.lcg-modal-close:hover{background:rgba(0,0,0,0.72);}
+.lcg-modal-img{display:block;width:100%;height:auto;}
+.lcg-modal-body{padding:24px 26px 28px;text-align:center;}
+.lcg-modal-title{
+  font-family:var(--sans);font-weight:600;font-size:17px;line-height:1.42;
+  color:var(--beige);margin:0 0 10px;
+}
+.lcg-modal-sub{
+  font-family:var(--sans);font-size:12.5px;line-height:1.5;
+  color:var(--gray);margin:0 0 20px;
+}
+.lcg-modal-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.02em;
+  color:var(--black);background:var(--beige);
+  padding:12px 26px;border-radius:30px;
+  text-decoration:none;
+  transition:background .2s ease;
+}
+.lcg-modal-cta:hover{background:var(--beige-deep);}
+
+@media (max-width:480px){
+  .lcg-modal{max-width:100%;border-radius:14px;}
+  .lcg-modal-body{padding:20px 18px 24px;}
+  .lcg-modal-title{font-size:15.5px;}
+}
