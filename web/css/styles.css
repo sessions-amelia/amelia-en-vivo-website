@@ -1,5 +1,4 @@
-/* Fonts: Atkinson Hyperlegible Mono (libre) + Antonia (licencia Atipo, cortes ópticos H1/H2/H3/Text) */
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+/* Fonts: Atkinson Hyperlegible Mono (libre, cargada via <link> en el <head>) + Antonia (licencia Atipo, cortes ópticos H1/H2/H3/Text) */
 
 @font-face{
   font-family:'AntoniaH1';
